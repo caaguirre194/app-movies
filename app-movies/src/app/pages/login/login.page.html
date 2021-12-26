@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Login" class="primary" [isBack]="false">
+</app-header>
 
-<ion-content>
+<ion-content padding>
+
+  <div class="login-wrapper" [formGroup]="loginForm">
+    <img class="icon login-wrapper__image" src="assets/icon/login.jpg" alt="" />
+
+    <div class="login-wrapper__form">
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input formControlName="email" color="dark" type="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" color="dark" type="password" name="password">
+        </ion-input>
+      </ion-item>
+      <ion-label color="derm" id="msg_error" style="display: none">
+        error</ion-label>
+
+      <ion-button class="btn btn--success" [disabled]="loginForm.invalid" (click)="login()">
+        Ingresar
+      </ion-button>
+      <ion-button class="btn btn--primary" (click)="signin()">
+        Registro
+      </ion-button>
+    </div>
+  </div>
 
 </ion-content>
