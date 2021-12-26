@@ -36,24 +36,24 @@
 
 .btn--primary {
   --background: var(--ion-color-movies-primary);
-  --color: var(--ion-color-primary-contrast);
+  --color: #ffffff;
   --background-activated: var(--ion-color-movies-primary);
 }
 
 .btn--secondary {
   --background: var(--ion-color-movies-secondary);
-  --color: var(--ion-color-primary-contrast);
+  --color: #ffffff;
   --background-activated: var(--ion-color-movies-secondary);
 }
 
 .btn--success {
   --background: var(--ion-color-movies-success);
-  --color: var(--ion-color-primary-contrast);
+  --color: #ffffff;
   --background-activated: var(--ion-color-movies-success);
 }
 
 .btn--danger {
   --background: var(--ion-color-movies-danger);
-  --color: var(--ion-color-primary-contrast);
+  --color: #ffffff;
   --background-activated: var(--ion-color-movies-danger);
 }

@@ -37,6 +37,7 @@ export class LoginPage implements OnInit {
 
   public login(ingresar) {
     console.log('login');
+    this.router.navigate(['/home']);
   }
 
   public signin() {

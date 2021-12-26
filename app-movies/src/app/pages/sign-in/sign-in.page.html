@@ -3,5 +3,60 @@
 
 
 <ion-content>
-  registro
+  <div class="signin-wrapper" [formGroup]="signinForm">
+
+    <div class="signin-wrapper__form">
+      <ion-item>
+        <ion-label position="stacked">Nombre y apellidos</ion-label>
+        <ion-input placeholder="Ej. Carlos Perez" formControlName="fullName" color="dark" type="fullName"
+          name="fullName">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Número celular</ion-label>
+        <ion-input placeholder="Ej. 300111222333" formControlName="phone" color="dark" type="number" name="number">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha de nacimiento</ion-label>
+        <ion-input placeholder="DD/MM/YY" formControlName="bid" color="dark" type="date" name="date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Departamento de residencia</ion-label>
+        <ion-input formControlName="department" color="dark" type="text" name="text">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Municipio de residencia</ion-label>
+        <ion-input formControlName="municipality" color="dark" type="text" name="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo electrónico</ion-label>
+        <ion-input placeholder="Ej. test@test.com" formControlName="email" color="dark" type="email" name="email">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input formControlName="password" color="dark" type="password" name="password">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Confirmar contraseña</ion-label>
+        <ion-input formControlName="password" color="dark" type="password" name="password">
+        </ion-input>
+      </ion-item>
+
+      <ion-button class="btn btn--success" [disabled]="signinForm.invalid" (click)="signin()">
+        Registrar
+      </ion-button>
+
+    </div>
+  </div>
 </ion-content>
