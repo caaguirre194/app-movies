@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MoviesService } from '@services/movies.service';
+
+// NgRX
+import { Store } from '@ngrx/store';
+import * as AppState from '@store/state/app.state';
+import * as LoginActions from '@store/actions/login.actions';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +14,14 @@ import { MoviesService } from '@services/movies.service';
 })
 export class LoginPage implements OnInit {
   public loginForm: FormGroup;
+  public iconPasswordName: string = 'eye';
+  public passwordType: string = 'password';
+  private passwordShown: boolean = false;
 
   constructor(
-    moviesService: MoviesService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    public store: Store<AppState.State>
   ) {
     this.loginForm = fb.group({
       email: [
@@ -30,12 +37,27 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  public login(ingresar) {
-    console.log('login');
-    this.router.navigate(['/home']);
+  public login() {
+    this.store.dispatch(
+      LoginActions.loginForm({
+        formUser: this.loginForm.value,
+      })
+    );
   }
 
   public signin() {
     this.router.navigate(['/sign-in']);
+  }
+
+  public togglePassword() {
+    if (this.passwordShown) {
+      this.passwordType = 'password';
+      this.iconPasswordName = 'eye';
+      this.passwordShown = false;
+    } else {
+      this.passwordType = 'text';
+      this.iconPasswordName = 'eye-off';
+      this.passwordShown = true;
+    }
   }
 }

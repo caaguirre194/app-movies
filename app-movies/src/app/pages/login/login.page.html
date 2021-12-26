@@ -14,18 +14,27 @@
 
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input formControlName="password" color="dark" type="password" name="password">
-        </ion-input>
+        <div class="login-wrapper__form-password">
+          <ion-input [type]="passwordType" formControlName="password" color="dark" type="password" name="password">
+          </ion-input>
+          <ion-icon [name]="iconPasswordName" color="derm13" item-end (click)="togglePassword()">
+          </ion-icon>
+        </div>
       </ion-item>
-      <ion-label color="derm" id="msg_error" style="display: none">
-        error</ion-label>
 
-      <ion-button class="btn btn--success" [disabled]="loginForm.invalid" (click)="login()">
-        Ingresar
-      </ion-button>
-      <ion-button class="btn btn--primary" (click)="signin()">
-        Registro
-      </ion-button>
+      <div class="login-wrapper__bottom">
+        <ion-label color="derm" id="msg_error" style="display: none">
+          Credenciales incorrectas</ion-label>
+
+        <ion-button class="btn btn--success" [disabled]="loginForm.invalid" (click)="login()">
+          Ingresar
+        </ion-button>
+        <ion-button class="btn btn--primary" (click)="signin()">
+          Registro
+        </ion-button>
+      </div>
+
+
     </div>
   </div>
 

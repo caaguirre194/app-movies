@@ -10,6 +10,7 @@ import * as AppState from '@store/state/app.state';
 import * as LoginSelectors from '@store/selectors/login.selectors';
 import { SessionService } from '@services/session.service';
 import { User } from '@model/user.model';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginEffects {
@@ -48,6 +49,7 @@ export class LoginEffects {
   constructor(
     private actions$: Actions,
     private sessionService: SessionService,
-    private store: Store<AppState.State>
+    private store: Store<AppState.State>,
+    private router: Router
   ) {}
 }
