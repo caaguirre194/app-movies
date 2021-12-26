@@ -16,11 +16,6 @@ export class LoginPage implements OnInit {
     private fb: FormBuilder,
     private router: Router
   ) {
-    moviesService.getPopularMovies().subscribe((data) => console.log(data));
-    moviesService
-      .findPopularMovieById(634649)
-      .subscribe((data) => console.log(data));
-
     this.loginForm = fb.group({
       email: [
         '',

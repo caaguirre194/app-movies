@@ -9,6 +9,12 @@ import { SignInPageRoutingModule } from './sign-in-routing.module';
 import { SignInPage } from './sign-in.page';
 import { ComponentsModule } from '@components/components.module';
 
+// NgRX
+import { StoreModule } from '@ngrx/store';
+import { signinReducer } from '@store/reducers/signin.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { SigninEffects } from '@store/effects/signin.effects';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +23,8 @@ import { ComponentsModule } from '@components/components.module';
     SignInPageRoutingModule,
     ComponentsModule,
     ReactiveFormsModule,
+    StoreModule.forFeature('signin', signinReducer),
+    EffectsModule.forFeature([SigninEffects]),
   ],
   declarations: [SignInPage],
 })

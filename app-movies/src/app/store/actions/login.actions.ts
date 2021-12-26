@@ -2,10 +2,6 @@ import { LoginUser } from '@model/login-user.model';
 import { User } from '@model/user.model';
 import { createAction, props } from '@ngrx/store';
 
-//--------------------------------------------------------
-// Login
-//--------------------------------------------------------
-
 export const loginForm = createAction(
   '[Login Page] Login Form',
   props<{ formUser: LoginUser }>()
