@@ -1,0 +1,11 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{movie.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face'+movie.poster_path" alt="">
+    <ion-card-subtitle>{{movie.release_date}}</ion-card-subtitle>
+    <ion-label>{{movie.overview}}</ion-label>
+  </ion-card-content>
+</ion-card>
