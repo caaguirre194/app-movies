@@ -1,3 +1,9 @@
-<p>
-  header works!
-</p>
+<ion-header>
+  <ion-toolbar [class]="'title-'+class">
+    <ion-buttons slot="start" *ngIf="isBack">
+      <ion-back-button defaultHref="/" text="Atrás" color="light" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
