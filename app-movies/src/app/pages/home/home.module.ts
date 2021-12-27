@@ -11,6 +11,12 @@ import { ComponentsModule } from '@components/components.module';
 import { MoviesPage } from './movies/movies.page';
 import { DownloadsPage } from './downloads/downloads.page';
 
+// NgRX
+import { StoreModule } from '@ngrx/store';
+import { downloadReducer } from '@store/reducers/download.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { DownloadEffects } from '@store/effects/download.effects';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +24,8 @@ import { DownloadsPage } from './downloads/downloads.page';
     IonicModule,
     HomePageRoutingModule,
     ComponentsModule,
+    StoreModule.forFeature('login', downloadReducer),
+    EffectsModule.forFeature([DownloadEffects]),
   ],
   declarations: [HomePage, MoviesPage, DownloadsPage],
 })
