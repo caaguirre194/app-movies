@@ -20,7 +20,7 @@ export const downloadReducer = createReducer<DownloadState>(
   on(
     DownloadActions.download,
     (state, { movie }): DownloadState => ({
-      downloads: [...state.downloads, movie],
+      downloads: state.downloads ? [...state.downloads, movie] : [movie],
     })
   ),
   on(
