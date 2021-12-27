@@ -1,7 +1,8 @@
 # App movies
 Desarrollo Móvil simulando la página https://www.themoviedb.org/
 
-
+## Demo :clapper:
+![Demo](resources/Animation.gif)
 
 Using:
 * [x] [Ionic](https://ionicframework.com/)
