@@ -7,10 +7,7 @@ export const loginForm = createAction(
   props<{ formUser: LoginUser }>()
 );
 
-export const loginFormSuccess = createAction(
-  '[Login API] Login Form Success',
-  props<{ user: User }>()
-);
+export const loginFormSuccess = createAction('[Login API] Login Form Success');
 
 export const loginFormFailure = createAction(
   '[Login API] Login Form Failure',

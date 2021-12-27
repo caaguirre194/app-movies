@@ -38,9 +38,8 @@ export const loginReducer = createReducer<LoginState>(
   ),
   on(
     LoginActions.loginFormSuccess,
-    (state, { user }): LoginState => ({
+    (state): LoginState => ({
       ...state,
-      user,
       showLoader: false,
       error: null,
     })
