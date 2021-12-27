@@ -37,6 +37,17 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
+  ionViewWillEnter() {
+    this.resetForm();
+  }
+
+  public resetForm(): void {
+    this.loginForm.patchValue({
+      email: '',
+      password: '',
+    });
+  }
+
   public login() {
     this.store.dispatch(
       LoginActions.loginForm({
