@@ -1,0 +1,25 @@
+<ion-card class="movie">
+  <ion-card-header>
+    <ion-card-title>{{movie.title}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face'+movie.poster_path" alt="">
+
+    <div class="movie__percent"></div>
+    <ion-card-subtitle>{{movie.release_date}}</ion-card-subtitle>
+
+    <ion-label>{{movie.overview}}</ion-label>
+
+    <div class="movie__buttons">
+      <ion-button color="danger" (click)="removeDownloadMovie(movie)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+      <ion-button class="btn--primary">
+        <ion-icon name="share-social-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+  </ion-card-content>
+</ion-card>

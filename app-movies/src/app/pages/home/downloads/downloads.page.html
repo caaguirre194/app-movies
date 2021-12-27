@@ -1,7 +1,4 @@
-<app-header title="Descargas" class="primary" [isBack]="false" [isExit]="true">
-</app-header>
-
 <ion-content>
-  <app-movie-item [movie]="movie" *ngFor="let movie of movies">
-  </app-movie-item>
+  <app-download-item [movie]="movie" *ngFor="let movie of movies" (refresh)="getDownloadMovies($event)">
+  </app-download-item>
 </ion-content>

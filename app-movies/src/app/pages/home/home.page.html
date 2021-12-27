@@ -1,11 +1,14 @@
+<app-header [title]="selection" class="primary" [isBack]="false" [isExit]="true">
+</app-header>
+
 <ion-tabs>
     <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="movies">
+        <ion-tab-button tab="movies" (click)="changeTitle('Películas')">
             <ion-icon name="medal-outline"></ion-icon>
             <ion-label>Top</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="downloads">
+        <ion-tab-button tab="downloads" (click)="changeTitle('Descargas')">
             <ion-icon name="download-outline"></ion-icon>
             <ion-label>Descargas</ion-label>
         </ion-tab-button>

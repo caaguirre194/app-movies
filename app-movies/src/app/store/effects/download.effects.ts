@@ -7,6 +7,7 @@ import * as DownloadActions from '../actions/download.actions';
 import { mergeMap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import * as AppState from '@store/state/app.state';
+import { Movie } from '@model/movie.model';
 
 @Injectable()
 export class DownloadEffects {
@@ -17,6 +18,22 @@ export class DownloadEffects {
         this.storageService.downloadMovie(action.movie);
 
         return [DownloadActions.downloadSuccess()];
+      })
+    );
+  });
+
+  removeDownload$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(DownloadActions.removeDownload),
+      mergeMap((action) => {
+        let downloadMovies: Movie[] = this.storageService.getDownloadMovies();
+        downloadMovies = downloadMovies.filter(
+          (item) => JSON.stringify(item) !== JSON.stringify(action.movie)
+        );
+
+        this.storageService.setDownloadMovies(downloadMovies);
+
+        return [DownloadActions.removeDownloadSuccess()];
       })
     );
   });

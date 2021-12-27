@@ -35,4 +35,8 @@ export class StorageService {
     }
     return [];
   }
+
+  public setDownloadMovies(movies: Movie[]): void {
+    localStorage.setItem('downloads', JSON.stringify(movies));
+  }
 }

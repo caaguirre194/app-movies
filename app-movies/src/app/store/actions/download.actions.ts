@@ -12,3 +12,17 @@ export const downloadFailure = createAction(
   '[Download API] Download Failure',
   props<{ error: string }>()
 );
+
+export const removeDownload = createAction(
+  '[Download API] Remove Download',
+  props<{ movie: Movie }>()
+);
+
+export const removeDownloadSuccess = createAction(
+  '[Download API] Remove Download Success'
+);
+
+export const removeDownloadFailure = createAction(
+  '[Download API] Remove Download Failure',
+  props<{ error: string }>()
+);

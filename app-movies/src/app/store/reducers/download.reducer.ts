@@ -22,5 +22,13 @@ export const downloadReducer = createReducer<DownloadState>(
     (state, { movie }): DownloadState => ({
       downloads: [...state.downloads, movie],
     })
+  ),
+  on(
+    DownloadActions.removeDownload,
+    (state, { movie }): DownloadState => ({
+      downloads: state.downloads.filter(
+        (item) => JSON.stringify(item) !== JSON.stringify(movie)
+      ),
+    })
   )
 );

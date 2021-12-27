@@ -18,7 +18,7 @@ export class DownloadsPage implements OnInit {
     this.getDownloadMovies();
   }
 
-  public getDownloadMovies() {
+  public getDownloadMovies(event?: any) {
     this.movies = this.storageService.getDownloadMovies();
   }
 }
