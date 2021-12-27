@@ -4,6 +4,15 @@
       <ion-back-button defaultHref="/" text="Atrás" color="light" icon="chevron-back-outline"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      {{title}}</ion-title>
+      {{title}}
+      <ion-icon id="side-button" *ngIf="isExit" name="ellipsis-horizontal-outline"></ion-icon>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
+
+
+<ion-popover trigger="side-button" side="bottom" [dismissOnSelect]="true">
+  <ng-template>
+    <app-exit></app-exit>
+  </ng-template>
+</ion-popover>
