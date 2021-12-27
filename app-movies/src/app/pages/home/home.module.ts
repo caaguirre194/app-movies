@@ -8,6 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { ComponentsModule } from '@components/components.module';
+import { MoviesPage } from './movies/movies.page';
+import { DownloadsPage } from './downloads/downloads.page';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { ComponentsModule } from '@components/components.module';
     HomePageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [HomePage],
+  declarations: [HomePage, MoviesPage, DownloadsPage],
 })
 export class HomePageModule {}

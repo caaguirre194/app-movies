@@ -1,9 +1,13 @@
-<app-header title="Películas" class="primary" [isBack]="false" [isExit]="true">
-</app-header>
+<ion-tabs>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="movies">
+            <ion-icon name="medal-outline"></ion-icon>
+            <ion-label>Top</ion-label>
+        </ion-tab-button>
 
-<ion-content>
-
-    <app-movie-item [movie]="movie" *ngFor="let movie of movies">
-    </app-movie-item>
-
-</ion-content>
+        <ion-tab-button tab="downloads">
+            <ion-icon name="download-outline"></ion-icon>
+            <ion-label>Descargas</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-tabs>

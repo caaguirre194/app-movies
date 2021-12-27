@@ -37,7 +37,7 @@ export class LoginEffects {
     this.actions$.pipe(
       ofType(LoginActions.loginFormSuccess),
       mergeMap((action) => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home/movies']);
         return [LoginActions.loginGoToHome()];
       })
     )
